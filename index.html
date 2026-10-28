@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿te gusta halloween?</title>
+<style>
+body{margin:0;height:100vh;background:#000;color:#fff;display:flex;justify-content:center;align-items:center;flex-direction:column;font-family:Arial Black;text-align:center}
+h1{font-size:40px}
+button{padding:15px 35px;font-size:22px;border-radius:12px;border:none;margin:10px;font-weight:bold}
+#si{background:#ff6600;color:#fff}
+#no{background:#fff;color:#000}
+#screamer{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;justify-content:center;align-items:center}
+#screamer img{width:100%;height:100%;object-fit:cover}
+</style>
+</head>
+<body>
+<h1>¿te gusta halloween?</h1>
+<div>
+<button id="si">SI</button>
+<button id="no">NO</button>
+</div>
+<div id="screamer"><img src="https://i.gifer.com/7VE.gif"></div>
+<audio id="aud"><source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c7d0d3.mp3"></audio>
+<script>
+function boom(){
+document.getElementById('screamer').style.display='flex';
+var a=document.getElementById('aud');a.volume=1;a.play();
+document.documentElement.requestFullscreen().catch(()=>{});
+}
+document.getElementById('si').onclick=boom;
+document.getElementById('no').onclick=boom;
+</script>
+</body>
+</html>
